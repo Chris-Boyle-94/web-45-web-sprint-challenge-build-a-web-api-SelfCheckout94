@@ -13,11 +13,7 @@ const router = express.Router();
 router.get("/", logger, async (req, res, next) => {
   try {
     const projects = await Projects.get();
-    if (projects.length > 0) {
-      res.status(200).json(projects);
-    } else {
-      res.status(200).send([]);
-    }
+    res.status(200).json(projects);
   } catch (err) {
     next();
   }
@@ -74,11 +70,9 @@ router.get(
   logger,
   validateProjectId,
   async (req, res, next) => {
-    // const { actions }
     try {
-      await Projects.getProjectActions(req.params.id);
-      // if(rq.body)
-      res.status(200).json(req.body.actions);
+      const actions = await Projects.getProjectActions(req.params.id);
+      res.status(200).json(actions);
     } catch (err) {
       next();
     }

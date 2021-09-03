@@ -20,7 +20,7 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 - [x] Run `npm install` to install your dependencies.
 - [x] Run tests locally executing `npm test`.
-- [ ] Reset the database to its original state executing `npm run resetdb`.
+- [x] Reset the database to its original state executing `npm run resetdb`.
 
 ### Task 2: Project Requirements (MVP)
 
@@ -56,7 +56,7 @@ Inside `api/projects/projects-router.js` build the following endpoints:
   - Returns the updated project as the body of the response.
   - If there is no project with the given `id` it responds with a status code 404.
   - If the request body is missing any of the required fields it responds with a status code 400.
-- [ ] `[DELETE] /api/projects/:id`
+- [x] `[DELETE] /api/projects/:id`
   - Returns no response body.
   - If there is no project with the given `id` it responds with a status code 404.
 - [ ] `[GET] /api/projects/:id/actions`

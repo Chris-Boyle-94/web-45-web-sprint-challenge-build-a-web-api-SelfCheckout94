@@ -61,6 +61,9 @@ router.put(
 router.delete("/:id", logger, validateProjectId, async (req, res, next) => {
   try {
     await Projects.remove(req.params.id);
+    res.status(200).json({
+      message: "Project successfully deleted.",
+    });
   } catch (err) {
     next();
   }

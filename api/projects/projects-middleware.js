@@ -22,7 +22,20 @@ const validateProjectId = async (req, res, next) => {
   }
 };
 
+const validateProject = (req, res, next) => {
+  const { name, description } = req.body;
+  if (!name || !description) {
+    next({
+      status: 400,
+      message: "missing required fields",
+    });
+  } else {
+    next();
+  }
+};
+
 module.exports = {
   logger,
   validateProjectId,
+  validateProject,
 };
